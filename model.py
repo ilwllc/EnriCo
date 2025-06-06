@@ -509,7 +509,7 @@ class EnriCo(InstructBase, PyTorchModelHubMixin):
             )
         config = load_config_as_namespace(config_file)
         model = cls(config)
-        state_dict = torch.load(model_file, map_location=torch.device(map_location))
+        state_dict = torch.load(model_file, map_location=torch.device(map_location), weights_only=False)
         model.load_state_dict(state_dict, strict=strict, assign=True)
         model.to(map_location)
         return model
