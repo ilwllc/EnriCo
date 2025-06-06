@@ -10,7 +10,7 @@ def save_model(current_model, path):
 
 
 def load_model(path, model_name=None):
-    dict_load = torch.load(path, map_location=torch.device('cpu'))
+    dict_load = torch.load(path, map_location=torch.device('cpu'), weights_only=False)
     config = dict_load["config"]
 
     if model_name is not None:
