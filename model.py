@@ -10,12 +10,12 @@ from huggingface_hub import PyTorchModelHubMixin, hf_hub_download
 from torch import nn
 from torch.nn.utils.rnn import pad_sequence
 
-from base import InstructBase
-from modules.evaluator import Evaluator
-from modules.layers import FilteringLayer, RelationRep, RefineLayer, ScorerLayer, LstmSeq2SeqEncoder
-from modules.span_rep import SpanRepLayer
-from modules.token_rep import TokenRepLayer
-from modules.utils import get_ground_truth_relations, get_relations, get_relation_with_span, _get_candidates
+from .base import InstructBase
+from .modules.evaluator import Evaluator
+from .modules.layers import FilteringLayer, RelationRep, RefineLayer, ScorerLayer, LstmSeq2SeqEncoder
+from .modules.span_rep import SpanRepLayer
+from .modules.token_rep import TokenRepLayer
+from .modules.utils import get_ground_truth_relations, get_relations, get_relation_with_span, _get_candidates
 
 
 class EnriCo(InstructBase, PyTorchModelHubMixin):
